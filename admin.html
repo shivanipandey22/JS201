@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input id="name" type="text">
+        <input id="category" type="text">
+        <input id="image" type="url">
+        <input id="price" type="text">
+        <input id="gender" type="text">
+        <input id="sold" type="boolean">
+        <input id="add" type="submit">
+    </form>
+
+</body>
+
+</html>
+<script>
+    
+    var form1=document.querySelector("form").addEventListener("submit",submitProduct)
+    var productarr=JSON.parse(localStorage.getItem("products")) || []
+function submitProduct(event){
+    // event.preventdefault()
+    var name=document.getElementById("name").value;
+    var category=document.getElementById("category").value;
+    var image=document.getElementById("image").value;
+    var price=document.getElementById("price").value;
+    var gender=document.getElementById("gender").value;
+    var sold=document.getElementById("sold").value;
+    console.log(name,category,price);
+
+
+
+    function productdetail(name,category,image,price,gender,sold){
+        this.name=name;
+        this.category=category;
+        this.image=image;
+        this.price=price;
+        this.gender=gender;
+        this.sold=sold;
+
+    }
+    var productdetail=new productdetail(name,category,image,price,gender,sold)
+    console.log(productdetail)
+    productarr.push(productdetail)
+    localStorage.setItem("products",JSON.stringify(productarr))
+}
+
+</script>
