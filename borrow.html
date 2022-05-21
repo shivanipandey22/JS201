@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>borrowSkills</title>
+</head>
+
+<body></body>
+
+</html>
+<script>
+    const singing = {
+        name: "Amar",
+        Profession: "Singer",
+        live: "Goa",
+        skill: "Folk Songs",
+
+        singSong() {
+            console.log(`Singer Amar New skill  ${this.skill}`);
+        },
+    };
+
+    const cooking = {
+        name: "Akbar",
+        Profession: "Chef",
+        live: "Mumbai",
+        skill: "italian",
+
+        cookFood() {
+            console.log(`Chef Akbar New skill ${this.skill} `);
+        },
+    };
+
+    const magicianAct = {
+        name: "Anthony",
+        Profession: "Magician",
+        live: "Kashmir",
+        skill: "Black Magic",
+        actMagic() {
+            console.log(`Magician Anthony New skill ${this.skill}`);
+        },
+    };
+
+    singing.singSong.call(cooking);
+    let skill1 = singing.singSong.bind(magicianAct);
+    skill1();
+
+    cooking.cookFood.call(magicianAct);
+    let skill2 = cooking.cookFood.bind(singing);
+    skill2();
+
+    magicianAct.actMagic.call(singing);
+    let skill3 = magicianAct.actMagic.bind(cooking);
+    skill3();
+</script>
