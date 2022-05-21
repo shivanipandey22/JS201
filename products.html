@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="container"></div>
+</body>
+
+</html>
+<script>
+    var data= JSON.parse(localStorage.getItem("products"));
+    
+    function display(data){
+    data.map(function(el){
+       var card = document.createElement("div");
+       var name=document.createElement("h1");
+       name.textContent=el.name
+       var category=document.createElement("p");
+       category.textContent=el.category;
+       var image=document.createElement("img");
+       image.src=el.image;
+       var price=document.createElement("p");
+       price.textContent=el.price
+       var gender=document.createElement("h2");
+       gender.textContent=el.gender
+       var sold=document.createElement("button");
+       sold.textContent="Sold"
+       var remove=document.createElement("button");
+       remove.textContent="Remove"
+       remove.addEventListener("click",function(){
+           card.remove ()
+       })
+
+
+
+
+       card.append(image,name,category,gender,price,sold,remove)
+       document.querySelector("#container").append(card)
+    }) 
+
+
+    }
+    display(data);
+
+  
+   
+    
+</script>
