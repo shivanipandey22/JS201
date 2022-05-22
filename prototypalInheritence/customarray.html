@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 style="text-align:center;text-decoration:underline">Prototypal Inheritance</h1>
+</body>
+
 </html>
 <script>
   let i;
-  let arr = new array(20,25,30,35);
+  let arr = new array(20, 25, 30, 35);
 
   function array() {
-    // let i ;
-
     for (i = 0; i < arguments.length; i++) {
       this[i] = arguments[i];
     }
@@ -31,6 +34,11 @@
     var i = arr[3];
     return i;
   };
+  array.prototype.size=function(){
+    i= arr.length
+    return i;
+
+  }
 
   arr.add(5);
   arr.add(10);
@@ -45,4 +53,5 @@
   console.log(new_array);
 
   console.log(Object.values(arr));
+  console.log("xyz", arr.size())
 </script>
