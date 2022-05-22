@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const car1 = {
+    name: " Breeza",
+    braking_system: "Power brake",
+    mileage : "19 kmpl",
+  };
+
+  const car2 = Object.create(car1);
+  car2.name = "Ertiga";
+  car2.braking_system = "Power brake";
+  car2.fueling = "Petrol";
+
+  console.log("car2:", car2.mileage);
+
+  const car3 = Object.create(car2);
+  car3.mileage = "22kmpl";
+  car3.fueling = " Diesel";
+  console.log("car3:", car3.braking_system);
+</script>
