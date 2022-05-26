@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="stylesheet" href="/styles/index.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
 
-    <body>
-        <div id="navbar">
-            <div id="left"><div>Masai Movies</div></div>
-            
-            <div id="right">
-                <div> <a href="index.html">Home</a></div>
-                <div> <a href="login.html">Login</a></div>
-                <div> <a href="signup.html">Signup</a></div>
-            </div>
-        </div>
-        <h1>Welcome to Masai Movies App</h1>
-        <div id="slideshow">
-            <!--Show Slideshow here-->
-
+<body>
+    <div id="navbar">
+        <div id="left">
+            <div>Masai Movies</div>
         </div>
 
-        <div id="sort-buttons">
-          
-            <!--Add sorting here-->
+        <div id="right">
+            <div> <a href="index.html">Home</a></div>
+            <div> <a href="login.html">Login</a></div>
+            <div> <a href="signup.html">Signup</a></div>
         </div>
-        <div id="movies">
-            <!--Show list of movies here-->
-        </div>
-    </body>
+    </div>
+    <h1>Welcome to Masai Movies App</h1>
+    <div id="slideshow">
+        <!--Show Slideshow here-->
+
+    </div>
+
+    <div id="sort-buttons">
+        <select id="sort" onchange="sortfunc()">
+            <option value="unsort">Sort By Rating</option>
+            <option value="sort-lh">Low to High</option>
+            <option value="sort-hl">High to Low</option>
+        </select>
+
+        <!--Add sorting here-->
+    </div>
+    <div id="movies">
+        <!--Show list of movies here-->
+    </div>
+</body>
 
 </html>
 <script src="/scripts/index.js"></script>
