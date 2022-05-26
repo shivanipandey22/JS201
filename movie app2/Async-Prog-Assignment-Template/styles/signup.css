@@ -1,0 +1,44 @@
+#navbar{
+    display: flex;
+    /* border: 1px solid; */
+    justify-content: space-between;
+    height: 50px;
+    background-color: tomato;
+    color: white;
+}
+#right{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    /* border: 1px solid; */
+    align-items: center;
+}
+#left {
+    /* border: 1px solid black; */
+    /* align-items: center; */
+    text-align: center;
+    width: 50%;
+    font-size: 40px;
+}
+#signup{
+    /* border: 1px solid black; */
+    width: 20%;
+    margin: auto;
+    margin-top: 50px;
+}
+input{
+    width: 98%;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+#submit1{
+    width: 100%;
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+}
