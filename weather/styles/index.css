@@ -1,0 +1,30 @@
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 400px;
+        width: 300px;
+      }
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 20%;
+        width: 10%;
+      }
+      #main{
+          display: flex;
+          margin-top: 6%;
+          background-color: yellow;
+          width: 500px;
+          border: 1px solid;
+          margin: auto;
+      }
+      #container{
+          width: 200px;
+          font-family: sans-serif;
+      }
+      #city{
+          margin:auto
+      }
+     
+    
