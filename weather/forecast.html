@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     
+      #container {
+        margin: auto;
+        width: 800px;
+        font-family: sans-serif;
+        /* border: 1px solid red; */
+        height: 300px;
+        display: flex;
+        background-color: rgb(122, 122, 206);
+      }
+      #box{
+          border: 1px solid black;
+          border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="city" placeholder="Enter City" />
+
+    <button onclick="forecastData()">Search</button>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  let key = "07deace19b5dc595b7f619fdb7812371";
+
+  let container = document.getElementById("container");
+
+  async function forecastData() {
+    try {
+      let city = document.getElementById("city").value;
+
+      let res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=7&appid=${key}&units=metric`
+      );
+
+      let data = await res.json();
+      // console.log("data:", data);
+
+      castData(data);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  function castData(el) {
+    container.innerHTML = null;
+    console.log("el:", el);
+
+    el.list.map(function (item) {
+        let card=document.createElement("div")
+        card.setAttribute("id","box")
+
+      let temp_max = document.createElement("p");
+      temp_max.innerText = `Max_Temp - ${item.main.temp_max}°C`;
+
+      let temp_min = document.createElement("p");
+      temp_min.innerText = `Min_Temp - ${item.main.temp_min}°C`;
+
+      let clouds = document.createElement("p");
+      clouds.innerText = `Clouds - ${item.weather[0].description}`;
+
+      let sunrise = document.createElement("p");
+      sunrise.innerText = `sunrise- ${el.city.sunrise}`;
+
+      let sunset = document.createElement("p");
+      sunset.innerText = `sunset- ${el.city.sunset}`;
+
+     card.append(clouds, sunrise, sunset, temp_max, temp_min);
+     container.append(card) 
+    });
+  }
+</script>
