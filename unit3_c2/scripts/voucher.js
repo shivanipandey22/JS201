@@ -1,3 +1,4 @@
+let user = JSON.parse(localStorage.getItem("user"))
 async function voucher(){
     try{
         let res= await fetch("https://masai-vouchers-api.herokuapp.com/api/vouchers")
